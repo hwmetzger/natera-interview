@@ -1,4 +1,3 @@
-// Import Global CSS that includes Tailwind CSS
 import "@/styles/global.css";
 
 /**

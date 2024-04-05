@@ -20,39 +20,29 @@ export const PageTemplateComponent = ({
   initialFormData,
 }: PageTemplateProperties): React.ReactElement => {
   const { useId, useRouter, useState } = Context;
-  // Generate unique id
+
   const id = useId();
-
-  // State of the Notes component
-  const [noteText, setNoteText] = useState("");
-
-  // State of the Form component
-  const [formData, setFormData] = useState(initialFormData);
-
-  // NextJS Router
   const router = useRouter();
 
-  // Handles the click event on Submit button
+  const [noteText, setNoteText] = useState("");
+  const [formData, setFormData] = useState(initialFormData);
+
   const handleSubmitClick = () => {
-    // Concat Data
     const data = {
       ...formData,
       notes: noteText,
       form: formId,
     };
 
-    // Submit the data for persistance
     DataService.DataEntry.setData(Math.random().toString(), data).then(() => {
       router.refresh();
     });
   };
 
-  // Handles the change event for the NotesComponent
   const handleTextChange = (text: string) => {
     setNoteText(text);
   };
 
-  // Handles the change event for the FormComponent
   const handleFormChange = (evt: ChangeEvent<any>, key: string) => {
     setFormData({
       ...formData,

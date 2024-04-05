@@ -16,7 +16,6 @@ export const NotesComponent = ({
   // Generate unique id
   const id = useId();
 
-  // Handles the change event on the textarea
   const handleTextChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
     onTextChange?.(evt.target.value);
   };

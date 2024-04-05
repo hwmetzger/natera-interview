@@ -13,7 +13,6 @@ export const InputFieldComponent = ({
   placeholder,
   onChange,
 }: InputFieldComponentProperties): React.ReactElement => {
-  // Handles the change event on the input
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     onChange?.(evt, "value");
   };

@@ -17,10 +17,9 @@ export const metadata = {
  * @returns Promise<React.ReactElement>
  */
 export default async function Page(): Promise<React.ReactElement> {
-  // Retrieve persisted data for Form 2
   const response = await DataService.DataEntry.getFormData(2);
 
-  // Flatten the response
+  // Flatten the response to merge the key with the value
   const data = response.map((r: any) => ({
     ...r.value,
     id: r.key,

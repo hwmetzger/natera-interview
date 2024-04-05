@@ -8,7 +8,6 @@ import SubmitButtonComponentProperties from "./models/submit-button";
 export const SubmitButtonComponent = ({
   onSubmit,
 }: SubmitButtonComponentProperties): React.ReactElement => {
-  // Handles the click event on the button
   const handleSubmitClick = () => {
     onSubmit();
   };

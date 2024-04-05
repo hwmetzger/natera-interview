@@ -13,7 +13,6 @@ export const FormComponent = ({
   title,
   children,
 }: FormComponentProperties): React.ReactElement => {
-  // Generate unique id
   const id = useId();
 
   return (

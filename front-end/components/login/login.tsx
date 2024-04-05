@@ -10,18 +10,14 @@ import LoginComponentProperties from "./models/login";
 export const LoginComponent = ({
   onSignInClick,
 }: LoginComponentProperties): React.ReactElement => {
-  // Generate unique id
   const id = useId();
 
-  // State of the Radio Button
   const [form, setForm] = useState("1");
 
-  // Handles the click event on Login button
   const handleButtonClick = () => {
     onSignInClick(form);
   };
 
-  // Handles the change events on the radio buttons
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
     setForm(event.target.value);
   };
