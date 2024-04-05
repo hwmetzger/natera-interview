@@ -1,0 +1,3 @@
+interface LoginComponentProperties {
+  onSignInClick: Function;
+}
