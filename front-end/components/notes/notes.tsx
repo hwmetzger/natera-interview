@@ -4,12 +4,19 @@ import React, { ChangeEvent, useId, useState } from "react";
 import { DocumentDuplicateIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import NotesComponentProperties from "./models/notes";
 
+/**
+ * This is a reusable notes container component. (Dumb Component)
+ * @param params <NotesComponentProperties>
+ * @returns React.ReactElement
+ */
 export const NotesComponent = ({
   text,
   onTextChange,
 }: NotesComponentProperties): React.ReactElement => {
+  // Generate unique id
   const id = useId();
 
+  // Handles the change event on the textarea
   const handleTextChange = (evt: ChangeEvent<HTMLTextAreaElement>) => {
     onTextChange?.(evt.target.value);
   };

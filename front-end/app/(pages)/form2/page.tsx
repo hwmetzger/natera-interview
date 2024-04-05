@@ -1,3 +1,4 @@
+import React from "react";
 import {
   InputFieldComponent,
   PageTemplateComponent,
@@ -6,19 +7,28 @@ import {
 import { DataService } from "@/services/index";
 import DataTableComponent from "./components/data-table";
 
+// NextJS Convention, assigning page's metadata
 export const metadata = {
   title: `Henry "Hank" Well Metzger - Interview Solution - Form 2`,
 };
 
-export default async function Page() {
-  const res = await DataService.DataEntry.getFormData(2);
-  const data = res.map((r: any) => ({
+/**
+ * This is the NextJS SSR Page for route '/form2'.
+ * @returns Promise<React.ReactElement>
+ */
+export default async function Page(): Promise<React.ReactElement> {
+  // Retrieve persisted data for Form 2
+  const response = await DataService.DataEntry.getFormData(2);
+
+  // Flatten the response
+  const data = response.map((r: any) => ({
     ...r.value,
     id: r.key,
   }));
+
   const initialFormData = {
-    question1: "off",
-    question2: "off",
+    question1: false,
+    question2: false,
     field1: "",
     notes: "",
   };

@@ -1,14 +1,21 @@
 "use component";
 
-import React, { ChangeEvent, useId, useState } from "react";
+import React, { useId } from "react";
 import FormComponentProperties from "./models/form";
 import { XMarkIcon } from "@heroicons/react/24/outline";
 
+/**
+ * This is a reusable form container component. (Dumb Component)
+ * @param params <FormComponentProperties>
+ * @returns React.ReactElement
+ */
 export const FormComponent = ({
   title,
   children,
 }: FormComponentProperties): React.ReactElement => {
+  // Generate unique id
   const id = useId();
+
   return (
     <div id={id} className="bg-white shadow-md rounded px-8 pt-6 pb-8 h-full">
       <div className="flex items-center mb-6">

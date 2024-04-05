@@ -5,6 +5,10 @@ import { useState } from "react";
 import { DataService } from "@/services/index";
 import { useRouter } from "next/navigation";
 
+/**
+ * This is the NextJS CSR Page for route '/'.
+ * @returns Promise<React.ReactElement>
+ */
 export default function Page() {
   const [message, setMessage] = useState("");
   const router = useRouter();

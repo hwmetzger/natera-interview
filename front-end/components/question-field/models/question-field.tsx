@@ -1,3 +1,6 @@
+/**
+ * Interface used by the QuestionFieldComponent
+ */
 interface QuestionFieldComponentProperties {
   id: string;
   title: string;

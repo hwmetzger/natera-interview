@@ -1,5 +1,10 @@
+// Import Global CSS that includes Tailwind CSS
 import "@/styles/global.css";
 
+/**
+ * This is the NextJS Root Layout that will be utilized by all routes.
+ * @returns React.ReactElement
+ */
 export default function RootLayout({
   children,
 }: {

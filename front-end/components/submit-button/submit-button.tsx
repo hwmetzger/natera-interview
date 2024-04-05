@@ -1,13 +1,18 @@
-interface SubmitButtonComponentProperties {
-  onSubmit: Function;
-}
+import SubmitButtonComponentProperties from "./models/submit-button";
 
+/**
+ * This is a reusable button component. (Dumb Component)
+ * @param params <SubmitButtonComponentProperties>
+ * @returns React.ReactElement
+ */
 const SubmitButtonComponent = ({
   onSubmit,
 }: SubmitButtonComponentProperties): React.ReactElement => {
+  // Handles the click event on the button
   const handleSubmitClick = () => {
     onSubmit();
   };
+
   return (
     <div className="text-center">
       <button

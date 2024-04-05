@@ -1,16 +1,11 @@
 import React from "react";
+import { DataTableComponentProperties, Form1Data } from "./models/data-table";
 
-interface DataTableComponentProperties {
-  data: Form1Data[];
-}
-
-interface Form1Data {
-  field1: string;
-  field2: string;
-  notes: string;
-  id: string;
-}
-
+/**
+ * This is a non-reusable table component used by the Form1 Page. (Dumb Component)
+ * @param params <DataTableComponentProperties>
+ * @returns React.ReactElement
+ */
 const DataTableComponent = ({
   data,
 }: DataTableComponentProperties): React.ReactElement => {
@@ -18,9 +13,11 @@ const DataTableComponent = ({
 };
 
 const DataTable = ({ data }: { data: Form1Data[] }): React.ReactElement => {
+  // Mapping data for alternating background color pattern
   const rows: React.ReactElement[] = data.map((d, i) => (
-    <DataRow data={d} alternate={i % 2 === 0} />
+    <DataRow key={`Form1_Row_${i}`} data={d} alternate={i % 2 === 0} />
   ));
+
   return (
     <div className="table w-full">
       <div className="table-header-group  bg-black">

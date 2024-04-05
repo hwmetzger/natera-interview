@@ -3,6 +3,11 @@
 import { ChangeEvent } from "react";
 import InputFieldComponentProperties from "./models/question-field";
 
+/**
+ * This is a reusable checkbox input component. (Dumb Component)
+ * @param params <InputFieldComponentProperties>
+ * @returns React.ReactElement
+ */
 export const QuestionFieldComponent = ({
   id,
   onChange,
@@ -10,9 +15,11 @@ export const QuestionFieldComponent = ({
   description,
   label,
 }: InputFieldComponentProperties): React.ReactElement => {
+  // Handles the change event on the input
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     onChange?.(evt, "checked");
   };
+
   return (
     <div className="mb-10">
       <div className="flex rounded-md bg-slate-100 pl-2 py-3 text-xl text-bold mb-2">

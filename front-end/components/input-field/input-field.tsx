@@ -3,14 +3,21 @@
 import { ChangeEvent } from "react";
 import InputFieldComponentProperties from "./models/input-field";
 
+/**
+ * This is a reusable text input component. (Dumb Component)
+ * @param params <InputFieldComponentProperties>
+ * @returns React.ReactElement
+ */
 export const InputFieldComponent = ({
   id,
   placeholder,
   onChange,
 }: InputFieldComponentProperties): React.ReactElement => {
+  // Handles the change event on the input
   const handleChange = (evt: ChangeEvent<HTMLInputElement>) => {
     onChange?.(evt, "value");
   };
+
   return (
     <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 mb-10">
       <input

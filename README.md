@@ -6,9 +6,9 @@ Greetings! I am submitting this repository as part of the interview process for 
 
 Below you will find instructions on how to get the application running. Running both the front-end and the back-end will require two terminal/command windows.
 
-### Front-End
-
 Run the following commands...
+
+### Front-End
 
     cd front-end
     npm install
@@ -19,6 +19,8 @@ Run the following commands...
     cd back-end
     npm install
     npm run start
+
+Once both terminals are running open a browser and navigate to [http://localhost:3000](http://localhost:3000). This will load a "Login" screen. From there you can select Form 1 or Form 2 to view.
 
 ## Documentation
 

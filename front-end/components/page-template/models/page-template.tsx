@@ -1,3 +1,6 @@
+/**
+ * Interface used by the PageTemplateComponent
+ */
 interface PageTemplateProperties {
   formTitle: string;
   formId: number;
