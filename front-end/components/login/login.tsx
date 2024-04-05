@@ -35,6 +35,7 @@ export const LoginComponent = ({
               type="radio"
               value="1"
               name="Form 1"
+              data-testid="login-form-1-radio"
               checked={form === "1"}
               onChange={handleRadioChange}
             />{" "}
@@ -45,6 +46,7 @@ export const LoginComponent = ({
               type="radio"
               value="2"
               name="Form 2"
+              data-testid="login-form-2-radio"
               checked={form === "2"}
               onChange={handleRadioChange}
             />{" "}
@@ -55,6 +57,7 @@ export const LoginComponent = ({
           <button
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
+            data-testid="login-button"
             onClick={handleButtonClick}
           >
             Login

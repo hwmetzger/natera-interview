@@ -5,7 +5,7 @@ import SubmitButtonComponentProperties from "./models/submit-button";
  * @param params <SubmitButtonComponentProperties>
  * @returns React.ReactElement
  */
-const SubmitButtonComponent = ({
+export const SubmitButtonComponent = ({
   onSubmit,
 }: SubmitButtonComponentProperties): React.ReactElement => {
   // Handles the click event on the button
@@ -18,6 +18,7 @@ const SubmitButtonComponent = ({
       <button
         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
         type="button"
+        data-testid="submit-button"
         onClick={handleSubmitClick}
       >
         Submit
@@ -25,5 +26,3 @@ const SubmitButtonComponent = ({
     </div>
   );
 };
-
-export default SubmitButtonComponent;

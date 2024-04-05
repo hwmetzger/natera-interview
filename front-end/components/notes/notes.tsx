@@ -41,6 +41,7 @@ export const NotesComponent = ({
           className="block p-2.5 w-full text-sm rounded-lg border-gray-300 border-2"
           placeholder="Type your Notes here..."
           value={text}
+          data-testid="notes-component-textarea"
           onChange={handleTextChange}
         ></textarea>
       </div>

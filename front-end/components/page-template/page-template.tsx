@@ -1,12 +1,12 @@
 "use client";
 
-import React, { ChangeEvent, useId, useState } from "react";
+import React, { ChangeEvent } from "react";
 import PageTemplateProperties from "./models/page-template";
 import { FormComponent } from "../form/form";
 import { NotesComponent } from "../notes/notes";
 import { DataService } from "@/services/data.service";
-import { useRouter } from "next/navigation";
-import SubmitButtonComponent from "../submit-button/submit-button";
+import Context from "./barrel";
+import { SubmitButtonComponent } from "../submit-button/submit-button";
 
 /**
  * This is a reusable page template component. (Smart Component)
@@ -19,6 +19,7 @@ export const PageTemplateComponent = ({
   formId,
   initialFormData,
 }: PageTemplateProperties): React.ReactElement => {
+  const { useId, useRouter, useState } = Context;
   // Generate unique id
   const id = useId();
 

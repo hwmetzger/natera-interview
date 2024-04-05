@@ -32,6 +32,7 @@ export const QuestionFieldComponent = ({
             name={id}
             id={id}
             className="scale-125"
+            data-testid="question-field-checkbox"
             onChange={handleChange}
           />
         </div>
