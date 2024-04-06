@@ -20,7 +20,7 @@ Run the following commands...
     npm install
     npm run start
 
-Once both terminals are running open a browser and navigate to [http://localhost:3000](http://localhost:3000). This will load a "Login" screen. From there you can select Form 1 or Form 2 to view.
+Once both terminals are running open a browser and navigate to [http://localhost:3000](http://localhost:3000). This will load a "Login" screen. From there you can select Form 1 or Form 2 to view. Also note, while you are running the back-end, you have access to [OpenAPI Swagger Documentation](http://localhost:4000/api).
 
 ## Documentation
 
