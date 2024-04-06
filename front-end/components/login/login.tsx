@@ -1,21 +1,36 @@
 "use client";
 import React, { ChangeEvent, useId, useState } from "react";
-import LoginComponentProperties from "./models/login";
+import { useRouter } from "next/navigation";
+import { DataService } from "@/services/index";
 
 /**
  * This is a reusable login component. This component is only for simulation purposes. (Smart Component)
  * @param params <LoginComponentProperties>
  * @returns React.ReactElement
  */
-export const LoginComponent = ({
-  onSignInClick,
-}: LoginComponentProperties): React.ReactElement => {
+export const LoginComponent = (): React.ReactElement => {
   const id = useId();
+  const router = useRouter();
 
   const [form, setForm] = useState("1");
 
-  const handleButtonClick = () => {
-    onSignInClick(form);
+  const handleSignInClick = () => {
+    switch (form) {
+      case "1":
+        DataService.Account.login(1).then((res: any) => {
+          if (+res.group === 1) {
+            router.push("/form1");
+          }
+        });
+        break;
+      default:
+        DataService.Account.login(2).then((res: any) => {
+          if (+res.group === 2) {
+            router.push("/form2");
+          }
+        });
+        break;
+    }
   };
 
   const handleRadioChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -54,7 +69,7 @@ export const LoginComponent = ({
             className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
             type="button"
             data-testid="login-button"
-            onClick={handleButtonClick}
+            onClick={handleSignInClick}
           >
             Login
           </button>
